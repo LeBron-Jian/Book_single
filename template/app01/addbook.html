@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>addbooks</title>
+{% endblock title %}
+
+{% block operation %}
+    <h2>添加书籍</h2>
+{% endblock operation %}
+
+{% block con %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">书籍名称</label>
+            <input type="text" class="form-control" id="title" name="title">
+        </div>
+
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" name="price">
+        </div>
+
+        <div class="form-group">
+            <label for="pub-date">出版日期</label>
+            <input type="text" class="form-control" id="pub-date" name="pub-date">
+        </div>
+
+        <div class="form-group">
+            <label for="publish">出版社</label>
+            <input type="text" class="form-control" id="publish" name="publish">
+        </div>
+
+        <button type="submit" class="btn btn-success pull-right">提交</button>
+    </form>
+
+    <p style="color: red;">{{ ret }}</p>
+
+{% endblock con %}
+
+
